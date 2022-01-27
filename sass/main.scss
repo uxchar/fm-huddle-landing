@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap");
+
+//colors
+$color-violet: hsl(257, 40%, 49%);
+$color-magenta: hsl(300, 69%, 71%);
+$color-white: #fff;
+
+//font
+$font-heading-poppins: "Poppins", sans-serif;
+$font-body-open-sans: "Open Sans", sans-serif;
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-violet;
+  background-image: url(./images/bg-mobile.svg);
+}
+
+.main-container {
+  width: 375px;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.logo {
+  margin: 50px auto;
+  width: 50%;
+}
+
+.illustration {
+  width: 100%;
+}
+
+.title {
+  color: $color-white;
+  font-family: $font-heading-poppins;
+  text-align: center;
+  margin: 50px auto 20px auto;
+}
+
+.description {
+  color: $color-white;
+  font-family: $font-body-open-sans;
+  text-align: center;
+  margin: auto auto 30px auto;
+}
+
+.register-btn {
+  justify-content: center;
+  margin: 0 55px;
+  color: $color-violet;
+  background-color: $color-white;
+  border-radius: 30px;
+  width: 250px;
+  height: 50px;
+}
+
+.social-icons {
+  color: #fff;
+
+  display: flex;
+  flex-direction: row;
+  margin: 30px auto;
+}
+
+.fab {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 0 5px;
+  justify-content: center;
+}
+
+a,
+a:hover,
+a:visited,
+a:active {
+  color: #fff;
+  text-decoration: none;
+}
