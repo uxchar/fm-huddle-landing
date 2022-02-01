@@ -15,70 +15,159 @@ $font-body-open-sans: "Open Sans", sans-serif;
   box-sizing: border-box;
 }
 
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin btn-hover {
+  &:hover {
+    cursor: pointer;
+    color: $color-white;
+    background-color: $color-magenta;
+  }
+}
+
 body {
   background-color: $color-violet;
-  background-image: url(./images/bg-mobile.svg);
 }
 
 .main-container {
+  @include flex-column();
   width: 375px;
-  flex-direction: column;
+  height: 800px;
+  background: url("../images/bg-mobile.svg") no-repeat;
   margin: 0 auto;
 }
 
+.img-container {
+  @include flex-column();
+}
+
 .logo {
-  margin: 50px auto;
-  width: 50%;
+  margin: 38px auto 60px 40px;
+  width: 120px;
 }
 
 .illustration {
-  width: 100%;
+  width: 296px;
+  height: 209px;
+  margin: 0 auto 40px auto;
+}
+
+.pitch-container {
+  width: 304px;
+  height: 272px;
+  margin: auto auto 65px auto;
 }
 
 .title {
-  color: $color-white;
   font-family: $font-heading-poppins;
+  color: $color-white;
   text-align: center;
-  margin: 50px auto 20px auto;
+  font-size: 24px;
 }
 
 .description {
-  color: $color-white;
   font-family: $font-body-open-sans;
+  color: $color-white;
   text-align: center;
-  margin: auto auto 30px auto;
+  font-size: 16px;
+  margin-bottom: 25px;
 }
 
 .register-btn {
-  justify-content: center;
-  margin: 0 55px;
+  @include btn-hover();
+  font-size: 12px;
   color: $color-violet;
   background-color: $color-white;
   border-radius: 30px;
-  width: 250px;
-  height: 50px;
+  display: block;
+  margin: 0 auto;
+  width: 210px;
+  height: 40px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .social-icons {
-  color: #fff;
-
   display: flex;
   flex-direction: row;
-  margin: 30px auto;
+  justify-content: center;
+  margin: 0 auto;
+  width: 304px;
 }
 
 .fab {
-  border: 2px solid #fff;
+  border: 2px solid $color-white;
   border-radius: 50%;
-  padding: 10px;
-  margin: 0 5px;
-  justify-content: center;
+  color: $color-white;
+  height: 40px;
+  margin: auto 5px;
+  padding: 11px;
+  width: 40px;
+  &:hover {
+    cursor: pointer;
+    color: $color-magenta;
+    border: 2px solid $color-magenta;
+  }
 }
 
-a,
-a:hover,
+a a:hover,
 a:visited,
 a:active {
-  color: #fff;
+  color: $color-white;
   text-decoration: none;
+}
+
+@media (min-width: 1100px) {
+  .main-container {
+    width: 1400px;
+    height: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: url("../images/bg-desktop.svg") no-repeat;
+  }
+
+  .logo {
+    width: 25%;
+    margin: 65px auto 80px 80px;
+  }
+
+  .illustration {
+    width: 696px;
+    height: 493px;
+    margin-left: 80px;
+  }
+  .pitch-container {
+    width: 520px;
+    height: 225px;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 40px;
+    margin: 232px auto 24px auto;
+    text-align: left;
+  }
+  .description {
+    font-size: 18px;
+    margin: 0 auto 24px auto;
+    text-align: left;
+  }
+
+  .register-btn {
+    font-size: 18px;
+    margin-left: 0;
+    width: 200px;
+    height: 56px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+      rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  }
+
+  .social-icons {
+    margin-top: 263px;
+    justify-content: flex-end;
+    width: 520px;
+  }
 }
